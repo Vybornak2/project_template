@@ -41,3 +41,5 @@ coverage.xml
 .coverage
 htmlcov/
 
+# Pre-commit hooks
+.cache_pre_commit/
