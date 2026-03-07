@@ -4,19 +4,16 @@ __package_description__
 
 ## Development
 
-### Environment Setup
+### Environment Setup - uv
 
 ```bash
 uv venv
 uv sync
 .venv\Scripts\activate
+
+# Sync development group dependencies  
+uv sync --dev
 ```
-
-[official installation guide for `uv`](https://github.com/astral-sh/uv#installation)
-
-## Development Tools
-
-some short text here
 
 ### Pre-commit
 
@@ -29,31 +26,38 @@ pre-commit install
 pre-commit run --all-files
 ```
 
-### Pytest
+### Testing - Pytest
 
 ```bash
 # Run all tests
-pytest
-# Run tests in a specific file
-pytest path/to/test_file.py
-# Run a specific test function
-pytest path/to/test_file.py::test_function
+pytest  
+# Run tests matching a specific pattern
+pytest -k "test_pattern"
 ```
 
-### Ruff
+### Linting and Formatting - Ruff
 
 ```bash
 # Check for linting errors and formatting issues
 ruff check .
-# Format code
-ruff format .
 # Fix linting errors automatically (use with caution)
 ruff check . --fix
+
+# Format code
+ruff format .
 ```
 
-### Mypy
+### Type Checking - TY
 
 ```bash
 # Run type checking
-mypy .
+ty check .
 ```
+
+### Resources
+
+- [uv](https://docs.astral.sh/uv/)
+- [pre-commit](https://pre-commit.com/)
+- [pytest](https://docs.pytest.org/en/stable/)
+- [ruff](https://docs.astral.sh/ruff/)
+- [ty](https://docs.astral.sh/ty/)
